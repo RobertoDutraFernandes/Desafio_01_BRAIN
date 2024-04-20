@@ -1,0 +1,78 @@
+DESAFIO: Previsão de preço de casas na California.
+
+-----------------------------------------------------------------------------
+Etapa 1: Manipulação do dado
+
+Libs necessárias:
+	- Pandas (import pandas as pd)
+	- Numpy (import numpy as np)
+	- Matplotlib (import matplotlib.pyplot as plt)
+
+Outras libs:
+	- Seaborn (import seaborn as sns)
+
+- Carregar a base de dados
+- Tratar base de dados
+	- Buscar com valores nulos
+		- Preencher com:
+			- Média
+			- Mediana
+			- Interpolação
+	- Buscar por outliers
+		- Manter ou remover?
+	- Buscar por valores estranhos
+		*Valores que não fazem muito sentido, vai do seu julgamento
+- Visualizar os dados
+	- Tipos das colunas
+	- Quantidade de registros (linhas)
+	- Quantidade de features (colunas)
+	- Metricas do datasets
+		- Média
+		- Desvio padrão
+		- Mediana
+		- Valor minimo e maximo
+- Visualizar correlação entre colunas
+	- Grafico de disperção
+	- Grafico de linha
+	- Matrix de correlação
+
+*Realize essa etapa no Colab
+*Use os markdown para separar as etapas do processo de analise de dado
+
+-----------------------------------------------------------------------------
+Etapa 2: Extrair insights sobre os dados.
+
+COLUNA TARGET : `medianHouseValue`
+- Explicar/Justifique as features que possam talvez explicar o valor de `medianHouseValue`.
+
+-----------------------------------------------------------------------------
+Etapa 3: Treinar modelo regressor para prever os preços.
+
+Libs necessárias:
+	- Scikit-Learn (import ??)
+
+- Modelos:
+	- Regressão Linear
+
+- Metrica avaliadora:
+	- MSE
+
+*Sinta-se livre para buscar por outras possíveis soluções que resolvam esse problema!
+
+-----------------------------------------------------------------------------
+Etapa 4: Desenvolva um script que determine o valor de uma casa. (Desafio opcional)
+
+Com o modelo treinado, crie um programa em Python que receba apenas os valores necessarios para a previsão via terminal e estime o valor da casa.
+O script deve:
+	- Receber as entradas por terminal apenas.
+	- O modelo deverá receber os valores entrado pelo usuário, prever o valor da casa e salvar o resultado em um arquivo JSON chamado `result.json`.
+	- A estrutura do JSON deve ser essa:
+	JSON => {
+						"input": {
+							"<nome-da-feature-escolhida>": "<valor-escolhido-pelo-usuário>"
+						}, 
+						"predict": "<valor-previsto-pelo-modelo>"
+					}
+Com esse programa, nós do BRAIN poderemos testar na pratica o modelo desenvolvido por você e validar o desempenho dele!
+
+*Essa etapa precisa ser feito em um repositório no GitHub, use o versionamento de arquivos para isso.
