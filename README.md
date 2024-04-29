@@ -7,7 +7,7 @@ O desafio 1 proposto pelo BRAIN consiste no desenvolvimento  e treinamento de um
 Foi realizado uma preparação dos dados do DataFrame para que o modelo de IA possa ter um processo de aprendizagem mais limpo, para isso foi necessário a realização de algumas sub-etapas.
 
 ## Transformação de dados categóricos:
-O modelo de IA em questão não consegue fazer a diferenciação de categorias (strings), sendo necessário fazer uma conversão desssas para dados numéricos, no caso binários, isto foi feito através do método 'One hot enconding', que realiza a adição de novas features para cada categoria presente, determinando o valor 1(TRUE) quando presente, do contrário define 0 (FALSE) para ausente.  Desta forma nosso modelo consegue diferenciar entre as categorias
+O modelo de IA em questão não consegue fazer a diferenciação de categorias (strings), sendo necessário fazer uma conversão dessas para dados numéricos, no caso binários, isto foi feito através do método 'One hot enconding', que realiza a adição de novas features para cada categoria presente, determinando o valor 1(TRUE) quando presente, do contrário define 0 (FALSE) para ausente.  Desta forma nosso modelo consegue diferenciar entre as categorias
 
 Na imagem abaixo, temos a presença da quantidade de casos para cada categoria, podemos observar que ISLAND possui apenas 5 casos, apesar da IA apresentar um ganho de 0,01% com a ausência da feature, foi optado por manter a mesma, isto porque acredita-se que a IA terá uma melhor precisão para um caso em questão.
 ![alt text](/desafio01/Imagens/dados_categóricos.png)
@@ -16,7 +16,7 @@ Na imagem abaixo, temos a presença da quantidade de casos para cada categoria, 
 A presença de dados faltantes em um DataFrame podem influenciar negativamente no precesso de aprendizagem do modelo, para isto é necessario fazer a substituição desses valores ou remoção dos mesmos. Neste caso em questão foi optado por realizar a substituição desses valores pela mediana dos demais da mesma feature (poderia ser feita a substiuição pela média, mas não foi, devido a presença de uma alta variação na faixa de números)
 
 ## Tratamento de Outliers:
-Outliers são valores atípicos que fogem de uma determinada faixa interquartil, estes valores podem ajudar ou não no treinamento do modelo, neste caso foi determinado que o modelo apresentava um melhor desempenho com a remoção dos outliers mais isolados dos demais.
+Outliers são valores atípicos que fogem de uma determinada faixa interquartil, estes valores podem influenciar ou não no treinamento do modelo, neste caso foi determinado que o modelo apresentava um melhor desempenho com a remoção dos outliers mais isolados dos demais.
 
 Gráfico pré-tratamento:
 ![alt text](/desafio01/Imagens/Outlier1.png)
@@ -62,7 +62,7 @@ O diagrama abaixo demonstra a correlação da nossa coluna target com as demais 
 
 # Etapa II - Desenvolvimento e treinamento do modelo:
 ## Treinamento da IA:
-Com as features selecionadas e com a utilização da biblioteca sklearn foi realizado o treinamento do modelo de 2 formas. A ideia inicial do desafio era projetar uma IA utilizando o modelo de regressão linear, mas após a finalização do treinamento o modelo não apresentou um resultado satisfatório, com uma taxa de acertividade de  aproximadamente 66% Com isto em mente foi buscado meio alternativos para realização do treinamento, após algumas pesquisas foi optado pela utilização do método 'randon forest regressor' o qual atingiu uma taxa de acertividade satisfatória, sendo de 82.63%.
+Com as features selecionadas e com a utilização da biblioteca sklearn foi realizado o treinamento do modelo de 2 formas. A ideia inicial do desafio era projetar uma IA utilizando o modelo de regressão linear, mas após a finalização do treinamento o modelo não apresentou um resultado satisfatório, com uma taxa de acertividade de  aproximadamente 66% Com isto em mente foi buscado meio alternativos para realização do treinamento, após algumas pesquisas foi optado pela utilização do método 'randon forest regressor' o qual atingiu uma taxa de acertividade satisfatória, sendo de 82.63% com uma faixa de erro de aproximadamente U$48151.9. Para o cálculo da taxa de acertividade foi utilizado a métrica 'r2_score', já para a faixa de erro utilizou-se o 'mean squared error'.
 
 Abaixo apresenta-se um gráfico de previsão do modelo treinado com o metodo 'random forest regressor'.
 ![alt text](desafio01/Imagens/gráfico_previsão.png)
