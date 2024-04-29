@@ -35,6 +35,3 @@ def pedir_parametros():
     df_variaveis.loc[len(df_variaveis)] = lista_resposta
     previsao_model = IA.predict(df_variaveis)
     print(f"Valor estimado: U${previsao_model.item()}")
-
-
-pedir_parametros()
